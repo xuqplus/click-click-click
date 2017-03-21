@@ -1,0 +1,28 @@
+
+</body>
+<script type="text/javascript">
+    var clickDelay = Object
+    clickDelay.delayMs = 300
+    $(window).on("keydown", function (event) {
+        if (!clickDelay.active) {
+            clickDelay.active = true
+            clickDelay.lastKey = event.key
+            clickDelay.times = 1
+            clickDelay.event = setTimeout(function () {
+                log("按键为-->\"" + clickDelay.lastKey + "\",连击次数-->" + clickDelay.times)
+                clickDelay.active = false
+            }, clickDelay.delayMs)
+        } else if (event.key == clickDelay.lastKey) {
+            clearTimeout(clickDelay.event)
+            clickDelay.event = setTimeout(function () {
+                log("按键为-->\"" + clickDelay.lastKey + "\",连击次数-->" + clickDelay.times)
+                clickDelay.active = false
+            }, clickDelay.delayMs)
+            clickDelay.times++
+        }
+    })
+    function log(value) {
+        console.log(value)
+    }
+</script>
+</html>
