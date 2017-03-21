@@ -1,0 +1,53 @@
+<html>
+</body>
+<script type="text/javascript">
+    var clickDelay300 = Object
+    $(window).on("keydown", function (event) {
+        if (event.key == "ArrowLeft" || event.key == "ArrowUp") {
+            if(clickDelay300.active){
+                clearTimeout(clickDelay300.event)
+                clickDelay300.active = false
+                log("左键双击")
+                return
+            }
+            clearTimeout(clickDelay300.event)
+            clickDelay300.event = setTimeout(function () {
+                log("左键单击")
+                clickDelay300.active = false
+            }, 300)
+            clickDelay300.active = true
+        }
+        if (event.key == "ArrowRight" || event.key == "ArrowDown") {
+            if(clickDelay300.active){
+                clearTimeout(clickDelay300.event)
+                clickDelay300.active = false
+                log("右键双击")
+                return
+            }
+            clearTimeout(clickDelay300.event)
+            clickDelay300.event = setTimeout(function () {
+                log("右键单击")
+                clickDelay300.active = false
+            }, 300)
+            clickDelay300.active = true
+        }
+        if (event.key == "Enter") {
+            if(clickDelay300.active){
+                clearTimeout(clickDelay300.event)
+                clickDelay300.active = false
+                log("回车双击")
+                return
+            }
+            clearTimeout(clickDelay300.event)
+            clickDelay300.event = setTimeout(function () {
+                log("回车单击")
+                clickDelay300.active = false
+            }, 300)
+            clickDelay300.active = true
+        }
+    })
+    function log(value) {
+        console.log(value)
+    }
+</script>
+</html>
