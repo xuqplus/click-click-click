@@ -1,0 +1,149 @@
+<html>
+<head>
+  <!--script src="https://code.jquery.com/jquery-3.1.1.js"></script-->
+  <script src="jquery-1.7.1.js"></script>
+  <style> 
+    body{
+      width:100000px;
+      padding:100px;
+      font-size:150px;
+      text-align:center;
+      overflow-x:hidden;
+      overflow-y:hidden;
+    }
+    [tabindex] {
+      float:left;
+      width:300px;
+      height:250px;
+      background-color:#777777;
+      border:10px blue solid;
+      //border-bottom:0px;
+      border-right:0px;
+    }
+    [tabindex]:last-child {/*伪类选择器:first-child/:last-child*/
+      width:300px;
+      height:250px;
+      background-color:#777777;
+      border:10px blue solid;
+    }
+    [tabindex]:focus {/*:focus前不能有空格*/
+      width:320px;
+      height:270px;
+      margin-top:-10px;//高度增量的一半
+      background-color:#777777;
+      border:10px black solid;
+    }
+    [tabindex]:focus {/*:focus前不能有空格*/
+      width:320px;
+      height:270px;
+      background-color:#777777;
+      border:10px black solid;
+    }
+  </style>
+</head>
+<body>
+<div>
+    <div tabindex="200" onclick="alert(this.innerHTML)">A</div>
+    <div tabindex="300" onclick="alert(this.innerHTML)">B</div>
+    <div tabindex="400" onclick="alert(this.innerHTML)">C</div>
+    <div tabindex="500" onclick="alert(this.innerHTML)">D</div>
+    <div tabindex="600" onclick="alert(this.innerHTML)">E</div>
+    <div tabindex="700" onclick="alert(this.innerHTML)">F</div>
+    <div tabindex="800" onclick="alert(this.innerHTML)">G</div>
+    <div tabindex="900" onclick="alert(this.innerHTML)">H</div>
+    <div tabindex="1000" onclick="alert(this.innerHTML)">I</div>
+    <div tabindex="1100" onclick="alert(this.innerHTML)">J</div>
+    <div tabindex="1200" onclick="alert(this.innerHTML)">K</div>
+    <div tabindex="1300" onclick="alert(this.innerHTML)">L</div>
+    <div tabindex="1400" onclick="alert(this.innerHTML)">M</div>
+    <div tabindex="1500" onclick="alert(this.innerHTML)">N</div>
+    <div tabindex="1600" onclick="alert(this.innerHTML)">O</div>
+    <div tabindex="1700" onclick="alert(this.innerHTML)">P</div>
+</div>
+</body>
+<script type="text/javascript">
+    var clickDelay = Object
+    clickDelay.delayMs = 300
+    $(window).on("keydown", function (event) {
+
+if(event.key == "Enter") {//业务逻辑中只需要回车双击
+        if (!clickDelay.active) {
+            clickDelay.active = true
+            clickDelay.lastKey = event.key
+            clickDelay.times = 1
+            clickDelay.event = setTimeout(function () {
+                //log("按键为-->\"" + clickDelay.lastKey + "\",连击次数-->" + clickDelay.times)
+                clickDelay.active = false
+                //按键处理
+                clickHandler({"key": clickDelay.lastKey, "times": clickDelay.times})
+            }, clickDelay.delayMs)
+        } else if (event.key == clickDelay.lastKey) {
+            clearTimeout(clickDelay.event)
+            clickDelay.event = setTimeout(function () {
+                //log("按键为-->\"" + clickDelay.lastKey + "\",连击次数-->" + clickDelay.times)
+                clickDelay.active = false
+                //按键处理
+                clickHandler({"key": clickDelay.lastKey, "times": clickDelay.times})
+            }, clickDelay.delayMs)
+            clickDelay.times++
+        }
+}else{
+  clickHandler({"key": event.key, "times": 1})
+}
+    })
+    function log(value) {
+        console.log(value)
+    }
+
+    function clickHandler(map) {
+        var element = $(":focus")
+        if (!element.length > 0) {
+            $("[tabindex=200]").focus()
+            return
+        }
+        if (map["times"] == 1) {
+            if (map["key"] == "ArrowLeft" || map["key"] == "ArrowUp") {
+                log("左键单击")
+                clickLeft()
+            }
+            if (map["key"] == "ArrowRight" || map["key"] == "ArrowDown") {
+                log("右键单击")
+                clickRight(1)
+            }
+            if (map["key"] == "Enter") {
+                log("回车单击")
+                clickEnter()
+            }
+        }
+        if (map["times"] == 2) {
+            if (map["key"] == "Enter") {
+                log("回车双击")
+                dbClickEnter()
+            }
+        }
+    }
+    function clickLeft() {
+        clickRight(-1)
+    }
+    function clickRight(direction) {
+        var currTabindex = $(":focus").attr("tabindex")
+        for (var i = currTabindex; i > 0 && Math.abs(i - currTabindex) <= 100; i += direction) {
+            if ($("[tabindex=" + i + "]").length > 0) {
+                $("[tabindex=" + i + "]").focus()
+            }
+        }
+    }
+    function clickEnter() {
+        $(":focus").trigger("click")
+    }
+    function dbClickEnter() {
+        $(":focus").trigger("dbclick")//触发自定义事件
+    }
+
+    $(document).ready(function () {
+        $("[tabindex]").on("dbclick", function () {
+            alert("自定义事件-dbclick")
+        })
+    })
+</script>
+</html>
