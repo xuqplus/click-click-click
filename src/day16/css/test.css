@@ -1,0 +1,32 @@
+.btn, .btn:focus, .btn.focus, .btn:hover, .btn-green, .btn-green:focus, .btn-green.focus, .btn-green:hover, .btn-red {
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  line-height: 150%;
+  border-radius: 0.25rem;
+  transition: 100ms; }
+
+.btn:focus, .btn-green:focus, .btn-red:focus, .btn.focus, .focus.btn-green, .focus.btn-red {
+  outline: 0;
+  box-shadow: 0 0 0.05rem 0.1rem #7d7d7d; }
+
+.btn:hover, .btn-green:hover, .btn-red:hover {
+  background-color: #c8c8c8; }
+
+.btn-green, .btn-green:focus, .btn-green.focus, .btn-green:hover {
+  color: #fff;
+  background-color: #009600; }
+
+.btn-green:focus, .btn-green.focus {
+  outline: 0;
+  box-shadow: 0 0 0.03rem 0.1rem #008200; }
+
+.btn-green:hover {
+  background-color: #007800; }
+
+/*# sourceMappingURL=test.css.map */
