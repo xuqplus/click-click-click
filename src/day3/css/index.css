@@ -1,0 +1,11 @@
+[title] {
+    color: red;
+}
+
+[title=a] {
+    color: greenyellow;
+}
+
+input[type=text] {
+    outline: red solid 0.01em;
+}

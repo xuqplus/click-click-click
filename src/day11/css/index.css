@@ -1,0 +1,41 @@
+@keyframes first {
+    0% {
+    }
+    100% {
+        float: left;
+        clear: none;
+    }
+}
+
+.div0 {
+    width: 8em;
+    height: 5em;
+    padding: 0em 1em;
+    background-color: #abd7ff;
+    border-radius: 25px;
+    -moz-border-radius: 25px; /* Old Firefox */
+    box-shadow: 0.1em 0.1em 0.1em #888888;
+    text-shadow: 0.05em 0.05em 0.05em #888888;
+}
+
+.div1 {
+    width: 8em;
+    height: 5em;
+    padding: 0em 1em;
+    background-color: #80b2ff;
+    border-radius: 25px;
+    -moz-border-radius: 25px; /* Old Firefox */
+    box-shadow: 0.05em 0.05em 0.05em #888888;
+    text-shadow: 0.1em 0.1em 0.1em #888888;
+}
+
+.div2 {
+    width: 10em;
+    height: 5em;
+    background-color: #5890ff;
+    padding-left: 0%;
+}
+
+div {
+    animation: first 4s;
+}

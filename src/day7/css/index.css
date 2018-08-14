@@ -1,0 +1,30 @@
+.div0 {
+    width: 10em;
+    height: 10em;
+    background-color: #abd7ff;
+}
+
+.div1 {
+    width: 10em;
+    height: 10em;
+    background-color: #80b2ff;
+}
+
+.div2 {
+    width: 10em;
+    height: 10em;
+    background-color: #5890ff;
+    padding-left: 0%;
+}
+
+div {
+    /*float: left;*/
+    clear: left;
+    left: 40%;
+    right: 40%;
+    position: relative;
+    /*position: static;*/
+    /*margin: 0% auto;*/
+    /*padding-left: 50%;*/
+    /*clear: both;*/
+}

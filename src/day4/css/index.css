@@ -1,0 +1,13 @@
+body {
+    /*background-color: gray;*/
+    /*padding: 0.02em;*/
+    background-image: url("../bg.png");
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    /*background-attachment:fixed;*/
+}
+
+p {
+    background-color: blue;
+    padding: 0.2em;
+}

@@ -1,0 +1,17 @@
+p {
+    text-indent: 2em;
+}
+
+p[class=xgsj] {
+    text-indent: -2em;
+    padding-left: 2em;
+}
+
+p[class=xgsj] {
+    letter-spacing: -0.1em;
+    /*word-spacing: 2em;*/
+}
+
+p[class=xgsj] {
+    text-decoration: underline overline line-through;
+}
