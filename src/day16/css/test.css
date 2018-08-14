@@ -1,32 +1,76 @@
-.btn, .btn:focus, .btn.focus, .btn:hover, .btn-green, .btn-green:focus, .btn-green.focus, .btn-green:hover, .btn-red {
+.btn, .btn:focus, .btn.focus, .btn:hover, .btn-green, .btn-green:focus, .btn-green.focus, .btn-green:hover, .btn-red, .btn-red:focus, .btn-red.focus, .btn-red:hover, .btn-blue, .btn-blue:focus, .btn-blue.focus, .btn-blue:hover, .btn-yellow, .btn-yellow:focus, .btn-yellow.focus, .btn-yellow:hover, .btn-syan, .btn-syan:focus, .btn-syan.focus, .btn-syan:hover {
   font-weight: 400;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
   border: none;
-  padding: 0.4rem 0.8rem;
+  padding: 0.4rem 0.6rem;
   font-size: 1rem;
   line-height: 150%;
   border-radius: 0.25rem;
   transition: 100ms; }
 
-.btn:focus, .btn-green:focus, .btn-red:focus, .btn.focus, .focus.btn-green, .focus.btn-red {
+.btn:focus, .btn-green:focus, .btn-red:focus, .btn-blue:focus, .btn-yellow:focus, .btn-syan:focus, .btn.focus, .focus.btn-green, .focus.btn-red, .focus.btn-blue, .focus.btn-yellow, .focus.btn-syan {
   outline: 0;
-  box-shadow: 0 0 0.05rem 0.1rem #7d7d7d; }
+  box-shadow: 0 0 0.05rem 0.1rem #b4b4b4; }
 
-.btn:hover, .btn-green:hover, .btn-red:hover {
+.btn:hover, .btn-green:hover, .btn-red:hover, .btn-blue:hover, .btn-yellow:hover, .btn-syan:hover {
   background-color: #c8c8c8; }
 
 .btn-green, .btn-green:focus, .btn-green.focus, .btn-green:hover {
   color: #fff;
-  background-color: #009600; }
+  background-color: #00be00; }
 
 .btn-green:focus, .btn-green.focus {
   outline: 0;
-  box-shadow: 0 0 0.03rem 0.1rem #008200; }
+  box-shadow: 0 0 0.03rem 0.1rem #00aa00; }
 
 .btn-green:hover {
-  background-color: #007800; }
+  background-color: #009600; }
+
+.btn-red, .btn-red:focus, .btn-red.focus, .btn-red:hover {
+  color: #fff;
+  background-color: #dc0000; }
+
+.btn-red:focus, .btn-red.focus {
+  outline: 0;
+  box-shadow: 0 0 0.03rem 0.1rem #c80000; }
+
+.btn-red:hover {
+  background-color: #b40000; }
+
+.btn-blue, .btn-blue:focus, .btn-blue.focus, .btn-blue:hover {
+  color: #fff;
+  background-color: #0000c8; }
+
+.btn-blue:focus, .btn-blue.focus {
+  outline: 0;
+  box-shadow: 0 0 0.03rem 0.1rem #0000b4; }
+
+.btn-blue:hover {
+  background-color: #0000a0; }
+
+.btn-yellow, .btn-yellow:focus, .btn-yellow.focus, .btn-yellow:hover {
+  color: #fff;
+  background-color: #e6e600; }
+
+.btn-yellow:focus, .btn-yellow.focus {
+  outline: 0;
+  box-shadow: 0 0 0.03rem 0.1rem #d2d200; }
+
+.btn-yellow:hover {
+  background-color: #bebe00; }
+
+.btn-syan, .btn-syan:focus, .btn-syan.focus, .btn-syan:hover {
+  color: #fff;
+  background-color: #00d2d2; }
+
+.btn-syan:focus, .btn-syan.focus {
+  outline: 0;
+  box-shadow: 0 0 0.03rem 0.1rem #00bebe; }
+
+.btn-syan:hover {
+  background-color: #00aaaa; }
 
 /*# sourceMappingURL=test.css.map */
